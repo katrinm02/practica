@@ -67,16 +67,16 @@ def get_ticket_number(message):
 @bot.callback_query_handler(func=lambda callback: True)
 # Поменял callback на call для удобности 
 def callback_query(call):
-    if datetime.fromtimestamp(time()) - datetime.fromtimestamp(call.message.date) > timedelta(minutes=2):
-        bot.edit_message_reply_markup(call.message.chat.id, message_id = call.message.message_id, reply_markup = '')
-        bot.send_message(call.message.chat.id, "Сообщение уже не актуально. Пожалуйста отвечайте в течение двух минут")
-    else:
-        if 'edit_ticket' in call.data:
+    if 'edit_ticket' in call.data:
+        if datetime.fromtimestamp(time()) - datetime.fromtimestamp(call.message.date) > timedelta(minutes=2):
+            bot.edit_message_reply_markup(call.message.chat.id, message_id = call.message.message_id, reply_markup = '')
+            bot.send_message(call.message.chat.id, "Сообщение уже не актуально. Пожалуйста отвечайте в течение двух минут")
+        else:
             requests.get(f"{api_url}/close_ticket?ticket={call.data.split('=')[1]}")
             bot.edit_message_reply_markup(call.message.chat.id, message_id = call.message.message_id, reply_markup = '')
             bot.send_message(call.message.chat.id, f"Заявка закрыта")
-        if call.data == 'close':
-            bot.edit_message_reply_markup(call.message.chat.id, message_id = call.message.message_id, reply_markup = '')
+    if call.data == 'close':
+        bot.edit_message_reply_markup(call.message.chat.id, message_id = call.message.message_id, reply_markup = '')
 
 # Handle all other messages.
 @bot.message_handler(content_types=['audio', 'photo', 'voice', 'video', 'document',
