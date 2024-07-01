@@ -36,11 +36,19 @@
 # cursor.close() 
 # connection.close() 
 # ------------
-import json
-a = [{"a":1, "b":2},{"a":1, "b":2}]
-a1 = json.dumps(a)
-print(a1)
-print(type(a1))
-a2 = json.loads(a1)
-print(a2)
-print(type(a2))
+# import json
+# a = [{"a":1, "b":2},{"a":1, "b":2}]
+# a1 = json.dumps(a)
+# print(a1)
+# print(type(a1))
+# a2 = json.loads(a1)
+# print(a2)
+# print(type(a2))
+# print(type(a2[0]))
+# # import time
+# from datetime import datetime, timedelta
+# print(type(time.time()))
+# print(datetime.fromtimestamp(time.time()))
+# print(datetime.fromtimestamp(1719855221))
+# print(datetime.fromtimestamp(time.time()) - datetime.fromtimestamp(1719855221) > timedelta(minutes=2))
+

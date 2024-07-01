@@ -42,10 +42,14 @@ app = FastAPI()
 async def get_order_info(ticket: str): 
     data = fetch_data_from_db_by_ticket(ticket) 
     if data: 
-        name, phone = data 
-        return {"name": name, "phone": phone} 
+        name, phone, status_id, status, status_dt = data 
+        return {"name": name, "phone": phone, "status_id": status_id, "status": status, "status_dt": status_dt} 
     else: 
         return {"error": "Order not found"} 
+    
+@app.get("/api/v1/close_ticket") 
+async def close_ticket(ticket: str): 
+    close_ticket_db(ticket)
  
 # Роут FastAPI для обработки запросов от телеграм бота (запрос неотработанных заявок) 
 @app.get("/api/v1/get_undone_ticket") 

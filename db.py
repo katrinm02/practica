@@ -23,10 +23,31 @@ def close_db(cursor, connection):
 # Получение данных из базы по ticket 
 def fetch_data_from_db_by_ticket(ticket): 
     cursor, connection = get_db()
-    cursor.execute("SELECT name, phone FROM phone_order WHERE ticket = %s", (ticket,)) 
+    cursor.execute("""
+                   SELECT 
+                        po.name,
+                        po.phone,
+                        s.id as status_id,
+                        s."name" as status,
+                        TO_CHAR(case 
+                            when s.id = 1 then po.receive_dt
+                            else po.ready_dt
+                        end,'YYYY-MM-DD HH24:MI:SS') as status_dt
+                    FROM phone_order po
+                    join status s on s.id = po.status_id 
+                    WHERE ticket = %s""", (ticket,)) 
     result = cursor.fetchone() 
     close_db(cursor, connection)
-    return result 
+    return result
+
+def close_ticket_db(ticket): 
+    cursor, connection = get_db()
+    cursor.execute("""
+                   update phone_order
+                    set status_id = 2, ready_dt=now()
+                    WHERE ticket = %s""", (ticket,))
+    connection.commit()
+    close_db(cursor, connection)
  
 # Получение данных из базы данных по статусу 
 def fetch_data_from_db_by_status(status_id): 
