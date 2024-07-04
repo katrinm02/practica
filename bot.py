@@ -30,9 +30,9 @@ def url(message):
     else:
         calls = []
         for call in json.loads(json_calls):
-            calls.append(f"""{call["num"]}) ticket: {call["ticket"]}, phone: {call["phone"]}, name: {call["name"]}""")
+            calls.append(f"""{call["num"]}) Заявка: {call["ticket"]},\n     Телефон: {call["phone"]},\n     Имя: {call["name"]}""")
         bot.send_message(message.from_user.id, "\n".join(calls))
-    
+
 
 @bot.message_handler(commands = ['get_order_info'])
 @admin_requered
@@ -47,7 +47,7 @@ def get_ticket_number(message):
     if "error" in json_calls:
         bot.send_message(message.from_user.id, "Такой заявки нет")
     else:
-        answer =  f"Имя: {json_calls['name']},  Телефон: {json_calls['phone']}, Статус: {json_calls['status']}\n Статус изменен: {json_calls['status_dt']}"
+        answer =  f"Имя: {json_calls['name']},\nТелефон: {json_calls['phone']},\nСтатус: {json_calls['status']}\nСтатус изменен: {json_calls['status_dt']}"
         dict_args = {
             'chat_id':message.chat.id,
             'text': answer
@@ -55,17 +55,17 @@ def get_ticket_number(message):
         if json_calls['status_id'] == 1:
             markup = types.InlineKeyboardMarkup()
             button1 = types.InlineKeyboardButton("Закрыть заявку", callback_data=f'edit_ticket={ticket_number}')
-            button2 = types.InlineKeyboardButton("Зыкрыть", callback_data='close')
+            button2 = types.InlineKeyboardButton("Закрыть окно", callback_data='close')
             for n in (button1,button2):
                 markup.row(n)
             dict_args['parse_mode'] = 'html'
             dict_args['reply_markup'] = markup
-        
+
         bot.send_message(**dict_args)
-        
+
 
 @bot.callback_query_handler(func=lambda callback: True)
-# Поменял callback на call для удобности 
+# Поменял callback на call для удобности
 def callback_query(call):
     if 'edit_ticket' in call.data:
         if datetime.fromtimestamp(time()) - datetime.fromtimestamp(call.message.date) > timedelta(minutes=2):

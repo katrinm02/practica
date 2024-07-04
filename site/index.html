@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>УБВТ2203</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<title>Slider</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Блок Header -->
+    <header class="hdr">
+        <!--      <div class="container">-->
+        <div class="hdr_inner">
+            <div class="hdr_logo">Пёсельная</div>
+            <div class="studio">grooming studio & shop</div>
+            <div class="address">Москва, Фрунзенская наб, 4 Пн-Вс 10:00 - 22:00</div>
+            <p class="phone"><a href=”tel:+79998887766” style="text-decoration: none; color: black;">+7 (999) 888 77 66</a></p>
+            <div class="hdr_logo">
+                <nav class="nav">
+                    <a class="nav_link" href="index.html">Главная</a>
+                    <a class="nav_link" href="#services">Услуги</a>
+                    <a class="nav_link" href="#emploees">Мастера</a>
+                    <a class="nav_link" href="#about_us">О нас</a>
+                    <a class="nav_link" href="#contact-info">Контакты</a>
+                </nav>
+            </div>
+			    <a href="https://t.me/your_name" target="_blank" title="Написать в Telegram"
+                    rel="noopener noreferrer"><img src="src/telegram.png" class="telegram-button_img" height="100"
+                        width="100">
+                    <div class="telegram-button"><i class="fa fa-telegram"></i></div>
+                </a>
+                <a href="https://api.whatsapp.com/send/?phone=79200000000&text=Здравствуйте%2C+у+меня+есть+вопрос"
+                    target="_blank" title="Написать в WatsApp" rel="noopener noreferrer"><img src="src/whatsapp.png"
+                        class="watsapp-button_img" height="100" width="100">
+                    <div class="watsapp-button"><i class="fa fa-watsapp"></i></div>
+                </a>
+                <a href="href=”tel:+79998887766”" target="_blank" title="Позвонить" rel="noopener noreferrer"><img
+                        src="src/call.png" class="call-button_img" height="100" width="100">
+                    <div class="call-button"><i class="fa fa-call"></i></div>
+                </a>
+        </div>
+    </header>
+
+    <!-- Блок Body -->
+    <div class="intro">
+        <div class="hdr_logo">
+            <div class="index-top__picture">
+                <img class="index-top-picture__image" loading="lazy" alt="Peselnaya banner" src="src/lend.png" width="1350"
+                    height="520">
+                <div class="advertising">
+                    <h2><span><br>Стильный питомец в Пёсельной</span></h2>
+                    <h5><span>
+                            <p class="index-top__subtitle">Мы совмещаем стандарты породного груминга с новыми
+                                техниками и пожеланиями владельцев. Следим за
+                                здоровьем и оказываем питомцам заботу и внимание.
+                                Оставьте заявку и мы позвоним вам, либо позвоните нам сами.
+                            </p>
+                        </span></h5>
+                    <h4><span>
+                            <div class="discount">Скидка 10% на первый визит</div>
+                        </span></h4>
+
+                    <div class="overlay" id="overlay"></div>
+                    <div class="app-button"><span><button type="button" class="application" button
+                                id="openModal">Оставить заявку</button></span></div>
+                    <div id="modal" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <h1>Оставьте свои контакты</h1>
+                            <h3>Мы свяжемся с вами для уточнения деталей</h3>
+                            <form action="http://127.0.0.1:8080/api/v1/post_ticket" method="post" type="dataForm">
+
+                                <label for="name">
+                                    <h11>Ваше имя:</h11>
+                                </label>
+                                <input type="text" id="name" name="name" required>
+                                <label for="phone">
+                                    <h12>Ваш телефон:</h12>
+                                </label>
+                                <input type="tel" id="phone" name="phone" required>
+
+                                <label class="checkbox-container">
+                                    <input type="checkbox" id="agreementCheckbox" required>
+                                    <span class="checkmark"></span>
+                                    <h13>Согласие на обработку персональных данных</h13>
+                                </label>
+
+                                <button type="submit_form" onclick="sendData()">Отправить</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <h6><span><button type="button" class="call">Позвонить</button></span></h6>
+            </div>
+
+            <div class="services" id="services">Услуги</div>
+            <div class="container">
+                <div class="rectangle-1"><img src="src/shaving-process-small-dog-sits-table-dog-shaved-by-professional.jpg"
+                        height="200" width="323" class="rectangle-1_img">
+                    <h7>Приучение к грумингу</h7>
+                    <div class="container-2">
+                        <div class="oval-1">от 2500 ₽</div>
+                    </div>
+                </div>
+                <div class="rectangle-1"><img src="src/washing-pet-dog-home.jpg" height="200" width="323"
+                        class="rectangle-1_img">
+                    <h8>Мытье + КУГ</h8>
+                    <div class="container-2">
+                        <div class="oval-1">от 3000 ₽</div>
+                    </div>
+                </div>
+                <div class="rectangle-1"><img src="src/90296fbfa126cfcbe04d37152d90b032.jpg" height="200" width="323"
+                        class="rectangle-1_img">
+                    <h9>Чистка зубов</h9>
+                    <div class="container-2">
+                        <div class="oval-1">от 1500 ₽</div>
+                    </div>
+                </div>
+                <div class="rectangle-1"><img src="src/beautiful-pet-portrait-small-dog-with-bubbles.jpg" height="200"
+                        width="323" class="rectangle-1_img">
+                    <h10>СПА-процедуры</h10>
+                    <div class="container-2">
+                        <div class="oval-1">от 1700 ₽</div>
+                    </div>
+                </div>
+                <div class="rectangle-1"><img src="src/scale_2400.jpg" height="200" width="323" class="rectangle-1_img">
+                    <h14>Лапакюр</h14>
+                    <div class="container-2">
+                        <div class="oval-1">от 1000 ₽</div>
+                    </div>
+                </div>
+                <div class="rectangle-1"><img src="src/dog-lifestyle-care-with-owner.jpg" height="200" width="323"
+                        class="rectangle-1_img">
+                    <h15>Комплексный уход</h15>
+                    <div class="container-2">
+                        <div class="oval-1">от 3000 ₽</div>
+                    </div>
+                </div>
+                <div class="rectangle-1"><img src="src/cute-dog-consultation.jpg" height="200" width="323"
+                        class="rectangle-1_img">
+                    <h16>Гигиена ушек</h16>
+                    <div class="container-2">
+                        <div class="oval-1">от 700 ₽</div>
+                    </div>
+                </div>
+                <div class="rectangle-1"><img src="src/vertical-shot-adorable-shiba-inu.jpg" height="200" width="323"
+                        class="rectangle-1_img">
+                    <h17>Подготовка к выставке</h17>
+                    <div class="container-2">
+                        <div class="oval-1">от 5000 ₽</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="emploees" id="emploees">Наши мастера</div>
+            <div class="container-3">
+                <div class="oval-2"><img src="src/77f108bc20bc819a0f3ea7ed938fe4f5.jpg" class="oval-1_img"
+                        onclick="showInfo('person1')">⭐5 Рита<br>Стаж: 2 года</div>
+                <div class="oval-2"><img
+                        src="src/blissfully-happy-blonde-girl-smiling-close-her-dog-beautiful-woman-feeling-happy-with-beloved-pet.jpg"
+                        class="oval-1_img" onclick="showInfo('person2')">⭐5 Катерина<br>Стаж: 3 года</div>
+                <div class="oval-2"><img src="src/stylish-woman-out-walk-with-her-dog.jpg" class="oval-1_img"
+                        onclick="showInfo('person3')">⭐5 Ханна <br>Стаж: 5 лет</div>
+                <div class="oval-2"><img src="src/side-view-young-woman-with-her-dog-park.jpg" class="oval-1_img"
+                        onclick="showInfo('person4')">⭐5 Римма<br>Стаж: 6 лет</div>
+                <div id="person1" class="hidden-block active">
+                    <img src="src/77f108bc20bc819a0f3ea7ed938fe4f5.jpg" class="avatar-1_img" alt="Фото Риты">
+                    <h18>⭐5 Рита<br>Стаж: 2 года<br>Специальность: Грумер</h18>
+                    <h19>Работа с собаками: Все породы<br>Работа с кошками: Нет</h19>
+                    <p2>Любовь к пушистым началась с самого детства. Я восхищалась их красотой. Когда я научилась шить,
+                        изготавливала домики-вигвамы для детей и животных.
+                        Я работала художником-оформителем, но это не приносило мне удовольствия. В профессию грумера
+                        меня привели мои хвостики: чи-чи (смесь чихуахуа и китайской
+                        хохлатой) Кроша и две кошечки Котел и Кефайс. Я всегда ухаживала за ними самостоятельно:
+                        вычесывала, мыла и сушила их феном, искала косметику и инструменты,
+                        тестировала на своих питомцах техники груминга. Я закончила курс академии груминга «Боншери» в
+                        2022 году. Удалось увидеть и выполнить разные стрижки на разных
+                        типах шерсти, это безвозвратно покорило моё сердце.</p2>
+                </div>
+
+                <div id="person2" class="hidden-block">
+                    <img src="src/blissfully-happy-blonde-girl-smiling-close-her-dog-beautiful-woman-feeling-happy-with-beloved-pet.jpg"
+                        class="avatar-1_img" alt="Фото Катерины">
+                    <h18>⭐5 Катерина<br>Стаж: 3 года<br>Специальность: Грумер</h18>
+                    <h19>Работа с собаками: Все породы<br>Работа с кошками: Да</h19>
+                    <p2>На 4 курсе университета стала думать над делом, которое будет приносить мне удовольствие , так
+                        как поняла , что работа по специальности - не мое.
+                        В моей семье всегда были домашние животные, но в Москве возможности завести себе собаку у меня
+                        не было, и я решила, раз хочу общаться с животными, то нужно с ними работать.
+                        Спустя полгода в груминге я завела себе свою собаку, кавалерчики - Любовь всей жизни.
+                        Я творческий человек, поэтому за столько небольшой стаж в груминге, я научилась делать красивые
+                        стрижки: пудели, мальтипу, бишоны и косички йоркам- мой конек.</p2>
+                </div>
+
+                <div id="person3" class="hidden-block">
+                    <img src="src/stylish-woman-out-walk-with-her-dog.jpg" class="avatar-1_img" alt="Фото Ханны">
+                    <h18>⭐5 Ханна<br>Стаж: 5 лет<br>Специальность: Грумер</h18>
+                    <h19>Работа с собаками: Все породы<br>Работа с кошками: Да</h19>
+                    <p2>Начинала свою работу помощником у очень требовательного топ грумера. Обучилась всем тонкостям
+                        мытья кошек и собак любых пород, гигиенического груминга,
+                        стрижки когтей, экспресс линьки, гигиену желез, бережного разбора колтунов, качественно
+                        подготавливала питомца к работе топ грумера.
+                        Профессионально порекомендует маску по типу шерсти, выполнит спа процедуру и всегда будет
+                        держать контакт с Вашим питомцем.
+                        Ханна очень любит животных, владелица той- пуделя и королевского пуделя.</p2>
+                </div>
+
+                <div id="person4" class="hidden-block">
+                    <img src="src/side-view-young-woman-with-her-dog-park.jpg" class="avatar-1_img" alt="Фото Риммы">
+                    <h18>⭐5 Римма<br>Стаж: 6 лет<br>Специальность: Грумер</h18>
+                    <h19>Работа с собаками: Все породы<br>Работа с кошками: Да</h19>
+                    <p2>Наш самый спокойный, безмятежный и стрессоустойчивый мастер. Первое образование Риммы -
+                        экономическое. Второе ветеринарное. Во время
+                        обучения ее компаньоном стал потрясающий пудель, с которого и началась большая груминг-история.
+                        В 2017г Закончила школу Боншери с преподавателем Романом Фоминым.
+                        Прошла множество мастер классов. Сейчас преподает в школе груминга, а также сама работает
+                        мастером.
+                        Постоянное развитие и океан творчества в жизни - обычное дело! Доброта, чуткость и уверенное
+                        владение ножницами, как будто они продолжение рук.
+                        Груминг для Риммы- целая жизнь!</p2>
+                </div>
+            </div>
+
+            <div class="about_us" id="about_us">О нас</div>
+            <div class="container-4">Пёсельная — груминг, как искусство<br>и традиции аристократии.
+                <h20><br>Домашние животные всегда приковывают к себе внимание,<br>а ухоженные питомцы, с гладкой шерстью
+                    и красивой стрижкой,<br>как дорогая известная картина, которой любуется весь мир.
+                    <br>На сегодняшний день, благодаря грумингу, внешний вид <br>и шерсть наших четвероногих друзей
+                    выглядят, как настоящее<br>произведение искусства, подчеркивая шарм и индивидуальность.<br>
+                </h20>
+                <img src="src/about_us.png" class="collage">
+            </div>
+
+            <div class="slider">
+                <div class="slideshow">
+                    <div class="slides">
+                        <img src="src/lovely-pet-portrait-isolated.jpg" alt="" height="200" width="323">
+                        <img src="src/cute-little-dog-with-owners-pet-shop.jpg" alt="" height="200" width="323">
+                        <img src="src/close-up-blurry-woman-holding-dog.jpg" alt="" height="200" width="323">
+                        <img src="src/cute-beagle-wearing-yellow-bow-time.jpg" alt="" height="200" width="323">
+                        <img src="src/influencer-their-pet-creating-content-online-spaces-social-media.jpg" alt=""
+                            height="200" width="323">
+                    </div>
+                </div>
+            </div>
+
+        <div class="contact-info" id="contact-info">Контакты</div>
+            <div class="container-5">
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2246.4015072777743!2d37.593498876406265!3d55.734152493428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54ba7a8b6e9e7%3A0x14fb5b6cabbe55d8!2z0KTRgNGD0L3Qt9C10L3RgdC60LDRjyDQvdCw0LEuLCA0LCDQnNC-0YHQutCy0LAsIDExOTAyMQ!5e0!3m2!1sru!2sru!4v1719769494471!5m2!1sru!2sru"></iframe>
+                </div>
+                <div class="contacts">
+                    <h21>«Пёсельная» находится в удобной и модной локации центра Москвы, где можно с удовольствием провести время, пока питомец наслаждается уходовыми процедурами.
+                    <p><strong>Телефон:</strong> +7 (999) 888 77 66</p>
+                    <p><strong>Email:</strong> <a href="mailto:peselnaya@mail.ru">peselnaya@mail.ru</a></p>
+                    <p><strong>Адрес:</strong> г. Москва, Фрунзенская наб, 4</p>
+                    <p><strong>График работы:</strong>Пн-Вс 10:00 - 22:00</p></h21>
+
+                </div>
+            </div>
+
+            <!-- Блок Footer -->
+            <footer class="black-footer">
+                <div class="footer-content">
+                    <p>© 2024 Сервис является учебным проектом.</p>
+                </div>
+            </footer>
+
+</body>
+<script src="script.js"></script>
+
+</html>

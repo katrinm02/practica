@@ -1,0 +1,1320 @@
+/* CSS-файл для стиля блоков */
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+footer {
+    position: center;
+    /*относительное позиционирование*/
+    width: 100%;
+    /*под размер хэдера*/
+    padding: 20px 0px;
+    /*поля для контента*/
+    display: flex;
+    justify-content: center;
+    /*в центре по горизонтали*/
+    align-items: center;
+    /*в центре по вертикали*/
+    flex-direction: column;
+    margin-top: 0px;
+    /*отступ сверху*/
+}
+
+.social,
+.menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 0;
+    margin-right: 3%;
+    flex-wrap: wrap;
+    /*разрешен перенос на новую строку*/
+}
+
+.social li,
+.menu li {
+    list-style: none;
+    /*удалить черные маркеры*/
+}
+
+.social li a {
+    font-size: 3em;
+    /*размер иконок*/
+    color: #fff;
+    /*цвет иконок*/
+    margin: 0 10px;
+    display: inline-block;
+    /*отображать как строчно-блочный элемент*/
+    transition: 0.5s;
+    /*плавный переход*/
+    position: center;
+
+}
+
+.menu li a:hover {
+    opacity: 1;
+}
+
+footer p {
+    color: #fff;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1.1em;
+}
+
+/* Стиль фона */
+.intro {
+        padding: 1em;
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%)
+}
+
+/* Стили текста заголовка */
+.intro_title {
+    color: black;
+    font-size: 150px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1;
+}
+
+.intro_inner {
+    padding-top: 7%;
+    font-size: 50px;
+    color: black;
+    font-family: 'Kaushan Script', cursive;
+    font-style: oblique;
+    text-align: center;
+
+}
+
+/* Стили header */
+.hdr {
+    padding-top: 1%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 7;
+
+}
+
+.hdr_inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 120px;
+    top: 0;
+    background-color: #F5E9D9;
+    /* Чтобы заголовки были четко видны против контента */
+
+}
+
+.hdr_logo {
+    padding-right: 5%;
+    padding-left: 5%;
+    font-family: cursive;
+    font-style: oblique;
+    font-variant: small-caps;
+    font-size: 30px;
+    font-weight: 700;
+    color: black;
+}
+
+/* Стили навигационной строки */
+.nav {
+    font-size: 15px;
+    text-transform: uppercase;
+    font-style: initial;
+    align-items: center;
+}
+
+.nav_link {
+    display: inline-block;
+    vertical-align: top;
+    margin: 15px;
+    position: relative;
+    color: black;
+    text-decoration: none;
+    transition: color .2s linear;
+}
+
+.nav_link:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    opacity: 0;
+    background-color: black;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    transition: opacity .1s lianer;
+
+}
+
+.nav_link:hover {
+    color: black;
+}
+
+.nav_link:hover:after {
+    opacity: 1;
+}
+
+/* Стили подвала */
+.ftr {
+    text-align: center;
+    padding: 0px;
+    background-color: black;
+    color: black;
+}
+
+/* Стили кнопки */
+.iksweb {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 20px 20px;
+    color: #050505;
+    background: black;
+    border-radius: 60px;
+    border: 0px solid #fc1919;
+    margin-top: 1%;
+}
+
+.iksweb:hover {
+    background: black;
+    color: #ffffff;
+    border: 0px solid black;
+    transition: all 0.6s ease;
+}
+
+/* Стили слайдера */
+html,
+body {
+    height: 100%;
+    font-size: 15px;
+}
+
+.swiper {
+    width: 650px;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.swiper-button-next,
+.swiper-rtl .swiper-button-prev {
+    right: 300px !important;
+    left: auto;
+    padding-top: 100px
+}
+
+.swiper-button-prev,
+.swiper-rtl .swiper-button-next {
+    left: 300px !important;
+    right: auto;
+    padding-top: 100px
+}
+
+/* Стиль карты */
+.map-responsive {
+    margin-top: 4%;
+    left: auto;
+    right: auto;
+}
+
+/* Стиль формы */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #F5E9D9;
+}
+
+.postcard {
+    max-width: 350px;
+    margin: 50px auto 0;
+    padding: 20px;
+    background: #fffdee;
+    border: 10px solid transparent;
+    border-image: 10 repeating-linear-gradient(135deg, black, black 10px, transparent 10px, transparent 20px, #FBCFDF 20px, #FBCFDF 30px, transparent 30px, transparent 40px);
+    font-family: 'Playfair Display';
+    color: #605756;
+}
+
+.form-row {
+    margin-bottom: 15px;
+}
+
+.form-row input[type="text"],
+.form-row input[type="email"],
+.form-row textarea {
+    width: 100%;
+    padding: 0 10px;
+    line-height: 35px;
+    border-width: 0;
+    outline: none;
+    background: transparent url(https://html5book.ru/wp-content/uploads/2016/12/bg-form.png) bottom left repeat-x;
+    background-size: 8px 35px;
+    font-family: 'Playfair Display';
+}
+
+.form-row textarea {
+    background-attachment: local;
+    background-repeat: repeat;
+    resize: none;
+}
+
+.form-row input[type="submit_form"] {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background: black;
+    border-width: 0;
+    cursor: pointer;
+    outline: none;
+    font-family: 'Playfair Display';
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: #fffdee;
+    text-transform: uppercase;
+    transition: 1s cubic-bezier(.165, .84, .44, 1);
+}
+
+.form-row input[type=submit_form]:hover {
+    background: black;
+}
+
+.index-top-picture__image {
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.address {
+    width: 200px;
+    margin-top: 1%;
+    margin-right: 0px;
+    font-family: cursive;
+    font-style: oblique;
+    font-variant: small-caps;
+    font-size: 13px;
+    font-weight: 100;
+}
+
+.studio {
+    width: 120px;
+    margin-top: 1%;
+    margin-right: 10px;
+    font-family: cursive;
+    font-style: oblique;
+    font-variant: small-caps;
+    font-size: 13px;
+    font-weight: 100;
+}
+
+.phone {
+    width: 150px;
+    margin-top: 1%;
+    margin-left: 20px;
+    font-family: cursive;
+    font-style: oblique;
+    font-variant: small-caps;
+    font-size: 15px;
+    font-weight: 100;
+}
+
+h1 {
+    position: relative;
+    text-align: center;
+    padding: 10px;
+    top: 0px;
+    right: 1%;
+    width: 100%;
+    font-size: 20px;
+}
+
+h2 {
+    position: absolute;
+    top: 10%;
+    right: 0;
+	left: 1em;
+    width: 100%;
+}
+
+h2 span {
+    font-size: 30px;
+    line-height: 55px;
+    padding: 10px;
+    line-height: 15px;
+}
+
+h3 {
+    position: relative;
+    text-align: center;
+    padding: 10px;
+    top: -10px;
+    right: 1%;
+    width: 100%;
+    font-size: 15px;
+}
+
+h5 {
+    position: absolute;
+    top: 25%;
+    right: 61%;
+    width: 35%;
+    text-align: left;
+}
+
+h5 span {
+    font-size: 20px;
+    line-height: 35px;
+    padding: 10px;
+    font-family: cursive;
+    font-style: oblique;
+    font-variant: small-caps;
+    font-size: 15px;
+    font-weight: 100;
+}
+
+.discount {
+    background-color: #F5E9D9;
+    padding: 10px;
+    max-width: 250px;
+    margin: 0 auto;
+    border-radius: 15px;
+    margin-left: 1px;
+}
+
+h4 {
+    position: absolute;
+    top: 0%;
+    right: 61.5%;
+    width: 35%;
+    text-align: left;
+}
+
+h4 span {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 35px;
+    padding: 10px;
+    font-family: cursive;
+    font-style: oblique;
+    font-variant: small-caps;
+    font-size: 15px;
+}
+
+.blocks__images {
+    padding: 10px;
+    top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 180px;
+}
+
+.block__image-img {
+    border-radius: 10px;
+}
+
+.block__image-img_emploees {
+    border-radius: 50px;
+}
+
+.black-footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: absolute;
+    top: 3650px;
+    height: 500px;
+    left: 6%;
+    width: 45em;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.application {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    max-width: 250px;
+    width: 250px;
+    margin: 0 auto;
+    border-radius: 15px;
+    top: 100px;
+    margin-left: 1px;
+    font-family: cursive;
+    font-style: oblique;
+    font-variant: small-caps;
+    font-size: 15px;
+}
+
+.call {
+    position: absolute;
+    background-color: white;
+    color: black;
+    padding: 3px;
+    max-width: 250px;
+    width: 45%;
+    margin: 0 auto;
+    border-radius: 15px;
+    top: 99%;
+    font-weight: bold;
+    line-height: 35px;
+    font-family: cursive;
+    font-style: oblique;
+    font-variant: small-caps;
+    font-size: 15px;
+}
+
+.app-button {
+    position: absolute;
+    top: 75%;
+    left: 3%;
+    width: 35%;
+    text-align: left;
+}
+
+.app-button span {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 35px;
+    padding: 10px;
+    font-family: cursive;
+    font-style: oblique;
+    font-variant: small-caps;
+    font-size: 15px;
+}
+
+h6 {
+    position: absolute;
+    top: 60.6%;
+    left: 25%;
+    width: 45%;
+    text-align: left;
+}
+
+h6 span {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 35px;
+    padding: 10px;
+    font-family: cursive;
+    font-style: oblique;
+    font-variant: small-caps;
+    font-size: 15px;
+}
+
+h7 {
+    position: relative;
+    top: -27%;
+    left: 11.5%;
+    width: 100%;
+    font-size: 22px;
+    color: white;
+    font-weight: 900;
+    display: flex;
+}
+
+h8 {
+    position: relative;
+    top: -27%;
+    left: 27%;
+    width: 100%;
+    font-size: 22px;
+    color: white;
+    font-weight: 900;
+    display: flex;
+}
+
+h9 {
+    position: relative;
+    top: -27%;
+    left: 27%;
+    width: 100%;
+    font-size: 22px;
+    color: white;
+    font-weight: 900;
+    display: flex;
+}
+
+h10 {
+    position: relative;
+    top: -27%;
+    left: 23%;
+    width: 100%;
+    font-size: 22px;
+    color: white;
+    font-weight: 900;
+    display: flex;
+}
+
+h11 {
+    position: relative;
+    text-align: left;
+    left: 10%;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 900;
+    display: flex;
+}
+
+h12 {
+    position: relative;
+    text-align: left;
+    left: 10%;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 900;
+    display: flex;
+}
+
+h13 {
+    position: relative;
+    text-align: center;
+    padding: 7%;
+    top: 15px;
+    left: -5%;
+    width: 100%;
+    font-size: 12px;
+}
+
+h14 {
+    position: relative;
+    top: -27%;
+    left: 38%;
+    width: 100%;
+    font-size: 22px;
+    color: white;
+    font-weight: 900;
+    display: flex;
+}
+
+h15 {
+    position: relative;
+    top: -27%;
+    left: 17%;
+    width: 100%;
+    font-size: 22px;
+    color: white;
+    font-weight: 900;
+    display: flex;
+}
+
+h16 {
+    position: relative;
+    top: -27%;
+    left: 27%;
+    width: 100%;
+    font-size: 22px;
+    color: white;
+    font-weight: 900;
+    display: flex;
+}
+
+h17 {
+    position: relative;
+    top: -27%;
+    left: 8%;
+    width: 100%;
+    font-size: 22px;
+    color: white;
+    font-weight: 900;
+    display: flex;
+}
+
+h18 {
+    position: relative;
+    top: -40%;
+    left: 20%;
+    width: 100%;
+    font-size: 25px;
+    font-weight: 900;
+    display: flex;
+}
+
+h19 {
+    position: relative;
+    top: -60%;
+    left: 55%;
+    width: 100%;
+    font-size: 25px;
+    font-weight: 900;
+    display: flex;
+}
+
+h20 {
+    position: relative;
+    top: -48%;
+    font-size: 20px;
+    top: 5%;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 20px;
+}
+
+h21 {
+    position: relative;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 20px;
+}
+
+p2 {
+    position: relative;
+    top: -48%;
+    font-size: 20px;
+}
+
+button:hover {
+    background: rgba(0, 0, 0, 0);
+    color: black;
+    box-shadow: inset 0 0 0 3px black;
+}
+
+.telegram-button {
+    position: fixed;
+    right: -6px;
+    bottom: -10px;
+    transform: translate(-50%, -50%);
+    background: #0088cc;
+    /*цвет кнопки*/
+    border-radius: 50%;
+    width: 55px;
+    /*ширина кнопки*/
+    height: 55px;
+    /*высота кнопки*/
+    color: #fff;
+    text-align: center;
+    line-height: 53px;
+    /*центровка иконки в кнопке*/
+    font-size: 35px;
+    /*размер иконки*/
+    z-index: 8;
+}
+
+.telegram-button_img {
+    position: fixed;
+    z-index: 9;
+    width: 55px;
+    /*ширина картинки*/
+    height: 55px;
+    /*высота картинки*/
+    right: 13px;
+    bottom: -10px;
+    transform: translate(-50%, -50%);
+    right: -6px;
+}
+
+.telegram-button a {
+    color: #fff;
+}
+
+.telegram-button:before,
+.telegram-button:after {
+    content: " ";
+    display: block;
+    position: fixed;
+    border: 50%;
+    border: 1px solid #0088cc;
+    /*цвет анимированных волн от кнопки*/
+    left: -20px;
+    right: -20px;
+    top: -20px;
+    bottom: -20px;
+    border-radius: 50%;
+    animation: animate 1.5s linear infinite;
+    opacity: 0;
+    backface-visibility: hidden;
+}
+
+.telegram-button:after {
+    animation-delay: .5s;
+}
+
+.watsapp-button {
+    position: fixed;
+    right: -7px;
+    bottom: 100px;
+    transform: translate(-50%, -50%);
+    background: #07cf3f;
+    /*цвет кнопки*/
+    border-radius: 50%;
+    width: 55px;
+    /*ширина кнопки*/
+    height: 55px;
+    /*высота кнопки*/
+    color: #fff;
+    text-align: center;
+    line-height: 59px;
+    /*центровка иконки в кнопке*/
+    font-size: 35px;
+    /*размер иконки*/
+    z-index: 8;
+}
+
+.watsapp-button_img {
+    position: fixed;
+    z-index: 9;
+    width: 57px;
+    /*ширина картинки*/
+    height: 57px;
+    /*высота картинки*/
+    right: 13px;
+    bottom: 97px;
+    transform: translate(-50%, -50%);
+    right: -8px;
+}
+
+.watsapp-button a {
+    color: #fff;
+}
+
+.watsapp-button:before,
+.watsapp-button:after {
+    content: " ";
+    display: block;
+    position: fixed;
+    border: 50%;
+    border: 1px solid #07cf3f;
+    /*цвет анимированных волн от кнопки*/
+    left: -20px;
+    right: -20px;
+    top: -20px;
+    bottom: -20px;
+    border-radius: 50%;
+    animation: animate 1.5s linear infinite;
+    opacity: 0;
+    backface-visibility: hidden;
+}
+
+.watsapp-button:after {
+    animation-delay: .5s;
+}
+
+.call-button {
+    position: fixed;
+    right: -7px;
+    bottom: 267px;
+    transform: translate(-50%, -50%);
+    background: white;
+    /*цвет кнопки*/
+    border-radius: 50%;
+    width: 55px;
+    /*ширина кнопки*/
+    height: 55px;
+    /*высота кнопки*/
+    color: #fff;
+    text-align: center;
+    line-height: 59px;
+    /*центровка иконки в кнопке*/
+    font-size: 35px;
+    /*размер иконки*/
+    z-index: 8;
+}
+
+.call-button_img {
+    position: fixed;
+    z-index: 9;
+    width: 57px;
+    /*ширина картинки*/
+    height: 57px;
+    /*высота картинки*/
+    right: 13px;
+    bottom: 267px;
+    transform: translate(-50%, -50%);
+    right: -8px;
+}
+
+.call-button a {
+    color: #fff;
+}
+
+.call-button:before,
+.call-button:after {
+    content: " ";
+    display: block;
+    position: fixed;
+    border: 50%;
+    border: 1px solid black;
+    /*цвет анимированных волн от кнопки*/
+    left: -20px;
+    right: -20px;
+    top: -20px;
+    bottom: -20px;
+    border-radius: 50%;
+    animation: animate 1.5s linear infinite;
+    opacity: 0;
+    backface-visibility: hidden;
+}
+
+.call-button:after {
+    animation-delay: .5s;
+}
+
+/* расположим все фигуры в ряд, добавим между ними отступ */
+.container {
+    top: 670px;
+    left: 85px;
+    position: absolute;
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.index-top__picture {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+}
+
+/* стили прямоугольников */
+.rectangle-1 {
+    background-color: white;
+    height: 200px;
+    width: 293px;
+    border-radius: 15px;
+    justify-content: center;
+}
+
+.rectangle-1_img {
+    border-radius: 15px;
+}
+
+.rectangle-1_img:hover {
+    transform: scale(1.1); /* Увеличивает изображение в 1.1 раза */
+    transition: transform 0.3s ease-in-out; /* Плавное увеличение за 0.3 секунды */
+  }
+
+  .container-3 {
+    top: 1280px;
+    left: 85px;
+    position: absolute;
+    display: flex;
+    gap: 115px;
+    flex-wrap: wrap;
+    border-radius: 50%;
+}
+
+.container-3 img {
+    cursor: pointer;
+}
+
+
+.oval-2 {
+    background-color: white;
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+    font-size: 20px;
+	text-align: center;
+    justify-content: center;
+}
+
+.oval-1_img {
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    
+}
+
+.oval-1_img:hover {
+    transform: scale(1.1); /* Увеличивает изображение в 1.1 раза */
+    transition: transform 0.3s ease-in-out; /* Плавное увеличение за 0.3 секунды */
+  }
+
+/* стили прямоугольников */
+.container-2 {
+    position: relative;
+    display: flex;
+    gap: 220px;
+    left: 5%;
+    bottom: 113%;
+}
+
+.oval-1 {
+    background-color: rgb(248, 216, 7);
+    height: 35px;
+    width: 130px;
+    border-radius: 50px;
+    font-size: 20px;
+}
+
+.oval-1:hover {
+    transform: scale(1.1); /* Увеличивает изображение в 1.1 раза */
+    transition: transform 0.3s ease-in-out; /* Плавное увеличение за 0.3 секунды */
+  }
+
+
+@keyframes animate {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 8% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    height: 17em;
+    max-width: 400px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px white; //тень границы
+}
+
+.close {
+    position: relative;
+    color: red;
+    top: -15px;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+input {
+    position: relative;
+    padding: 10px;
+    margin: 3%;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+	left: 40px;
+    text-align: left;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+}
+
+input:focus {
+    position: relative;
+    outline: none;
+    border-color: #007bff;
+    text-align: left;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+}
+
+button[type="submit_form"] {
+    position: relative;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    top: 50%;
+    max-width: 250px;
+    width: 250px;
+    border-radius: 15px;
+    margin-left: 1px;
+    font-family: cursive;
+    font-style: oblique;
+    font-variant: small-caps;
+    font-size: 15px;
+    margin: 8%;
+  }
+  
+  .button[type="submit_form"]:hover {
+    background-color: white;
+    border-color: black;
+    color: black;
+  }
+  
+  .button[type="submit_form"]:active {
+    background-color: white;
+    border-color: black;
+    color: black;
+  }
+
+  .checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 60px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .checkmark {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    height: 20px;
+    width: 20px;
+    background-color: #eeeeee;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .checkbox-container input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+  
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+  }
+
+  .slider {
+    position: relative;
+    top: 2860px;
+    
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0px;
+  }
+
+  .slideshow {
+    width: 96%;
+    overflow: hidden;
+  }
+  
+  .slides {
+    white-space: nowrap;
+    animation: slide 10s linear infinite;
+  }
+  
+  .slides img {
+    width: 25%;
+    display: inline-block;
+    border-radius: 15px;
+  }
+  
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-30%);
+    }
+  }
+
+.services {
+    position: absolute;
+    border-radius: 15px;
+    width: 45em;
+	text-align: center;
+    top: 550px;
+    margin: 50px 0;
+    padding: 20px;
+    background: #f7f7f7;
+	    left: 760px;
+        margin-right: -50%;
+        transform: translate(-50%, -50%)
+}
+
+.emploees {
+    position: absolute;
+    border-radius: 15px;
+    width: 45em;
+    top: 1150px;
+    margin: 50px 0;
+    padding: 20px;
+	text-align: center;
+    background: #f7f7f7;
+        left: 760px;
+        margin-right: -50%;
+        transform: translate(-50%, -50%)
+}
+
+.about_us {
+    position: absolute;
+	text-align: center;
+    border-radius: 15px;
+    width: 85%;
+    top: 2050px;
+    margin: 50px 0;
+    padding: 20px;
+    background: #f7f7f7;
+}
+
+.hidden-block {
+    font-style: normal;
+    font-weight: 100;
+    font-size: 20px;
+    display: none;
+    position: relative;
+    width: 90%; /* или любой другой размер */
+    height: 410px;
+    text-align: left;
+    padding: 35px;
+    border-radius: 15px;
+    background-color: #f9f9f9; /* цвет фона блока */
+    border: 1px solid #ddd; /* рамка вокруг блока */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* тень для блока */
+  }
+
+  .hidden-block.active {
+    display: block;
+  }
+
+  .info-block img {
+    width: 100%;
+    height: auto;
+  }
+
+  .avatar-1_img {
+    position: relative;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    left: 2%;
+}
+
+.container-4 {
+    position: absolute;
+    border-radius: 15px;
+    text-align: left;
+    width: 85%;
+    height: 480px;
+    top: 2170px;
+    margin: 60px 0;
+    padding: 40px;
+    background: #f7f7f7;
+    background-color: #f9f9f9; /* цвет фона блока */
+    border: 1px solid #ddd; /* рамка вокруг блока */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* тень для блока */
+  }
+
+.collage {
+    position: relative;
+    top: -100%;
+    left: 57%;
+    width: 550px;
+    height: 500px;
+}
+
+.contact-info {
+    position: absolute;
+    border-radius: 15px;
+    width: 85%;
+	text-align: center;
+    top: 2700px;
+    margin: 50px 0;
+    padding: 20px;
+    background: #f7f7f7;
+  }
+
+  .container-5 {
+    position: absolute;
+    border-radius: 15px;
+    text-align: left;
+    width: 85%;
+    height: 480px;
+    top: 3060px;
+    margin: 60px 0;
+    padding: 40px;
+    background: #f7f7f7;
+    background-color: #f9f9f9; /* цвет фона блока */
+    border: 1px solid #ddd; /* рамка вокруг блока */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* тень для блока */
+  }
+
+  .map-container {
+    position: relative;
+    float: right;
+    right: 0px;
+    width: 50%;
+    height: 400px;
+    padding: 20px;
+  }
+
+  iframe {
+    width: 600px;
+    height: 100%;
+    border: none; /* Убираем рамку вокруг iframe */
+  }
+
+.contacts {
+    position: relative;
+    float: left;
+    right: 0px;
+    width: 50%;
+    height: 400px;
+    padding: 20px;
+}

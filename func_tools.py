@@ -28,30 +28,6 @@ def get_message_info(*args, **kwargs):
 
     return "UNKNOWN", "UNKNOWN"
 
-def logged_execution(func):
-    def wrapper(*args, **kwargs):
-        chat_id, text = get_message_info(*args, **kwargs)
-
-        print(
-            f"[LOG] Starting {func.__name__} - chat_id {chat_id}",
-        )
-        print( {
-                "text": text,
-                 "arg": str(args),
-                "kwarg": str(kwargs),
-             })
-        try:
-            func(*args, **kwargs)
-            print(
-                f"[LOG] Finished {func.__name__} - chat_id {chat_id}"
-            )
-        except Exception as e:
-            print(
-                f"[LOG] Failed {func.__name__} - chat_id {chat_id} - exception {e}"
-            )
-
-    return wrapper
-
 def no_access(message):
     bot.send_message(message.from_user.id, "низя(")
 
@@ -66,22 +42,10 @@ def admin_requered(func):
             print(
                 f"[LOG] Finished {func.__name__} - chat_id {chat_id}",
                 text
-                # extra={
-                #     "text": text,
-                #     "arg": str(args),
-                #     "kwarg": str(kwargs),
-                # },
             )
         except Exception as e:
             print(
-                f"[LOG] Failed {func.__name__} - chat_id {chat_id} - exception {e}",
-                # extra={
-                #     "text": text,
-                #     "arg": str(args),
-                #     "kwarg": str(kwargs),
-                #     "error": e,
-                #     "traceback": traceback.format_exc(),
-                # },
+                f"[LOG] Failed {func.__name__} - chat_id {chat_id} - exception {e}"
             )
 
     return wrapper
